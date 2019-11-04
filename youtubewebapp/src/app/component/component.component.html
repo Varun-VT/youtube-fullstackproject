@@ -1,0 +1,21 @@
+<!-- <div *ngFor = "let a of tracks">
+
+    {{a.kind}}
+    {{a.kind}} || {{a.etag}} 
+</div> -->
+<div *ngFor = "let vid of tracks">
+    <!-- {{"https://www.youtube.com/watch?v="+vid.id}} -->
+    <div>
+    <div class="card" style="width: 18rem; float: left;height: 450px;padding: 2px;">
+            <img src="{{vid.snippet.thumbnails.medium.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{vid.snippet.title}}</h5>
+              <p class="card-text"></p>
+              <a href='{{"https://www.youtube.com/watch?v="+ vid.id}}' class="btn btn-primary" style="display: flow-root;">Watch on Youtube</a>
+            </div>
+            <a href='#' class="btn btn-primary" (click)="saveToDatabase(vid.id, vid.snippet.title, vid.snippet.channelTitle, vid.statistics.viewCount)">Add to Favourites</a>
+          </div>                                          
+        </div>
+    <!-- <iframe href="{{"https://www.youtube.com/watch?v="+vid.id}} | safe"></iframe> -->
+
+</div>
